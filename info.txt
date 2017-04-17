@@ -1,0 +1,5 @@
+Currently, Xyphos can shave the Macbeth document from 116 KB to 99 KB.
+
+# What to do
+  -Add a decompression module
+  -Maybe include more words in the compression list?
