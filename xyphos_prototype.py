@@ -28,6 +28,8 @@ for line in myFile:
     #well that's convenient
     words = re.compile("\w+").findall(line)
     for word in words:
+        if len(word)==1 or len(word)==2:
+            continue
         #does not conserve case. i might end up changing that
         word = word.lower()
         if word not in redundancies.keys():
@@ -38,13 +40,15 @@ for line in myFile:
 #need to sort redundancies, take the 60 most used words
 tupleList = sorted(redundancies.items(), key=operator.itemgetter(1))
 tupleList.reverse()
-tupleList = tupleList[:60]
+wordList = []
+#take the 60 most used words
+for el in tupleList[:60]:
+    wordList.append(el[0])
 
 #ascii int value for 'A'
 z = 65
-for a in range(len(tupleList)):
-    rep = chr(z)
-    compression[tupleList[a][0]] = rep
+for element in wordList:
+    compression[element] = chr(z)
     if z == 122:
         break
     z += 1
@@ -54,3 +58,27 @@ compFile = open(newFilename, 'w')
 
 #to be continued... assign key-value pairings and compressed text to
 #<file>_compressed.txt, line by line. looking into efficient solutions
+myFile.close()
+
+myNewFile = open(filename, 'r')
+
+for comKey in compression:
+    compFile.write(comKey + " ")
+
+compFile.write("\n")
+
+for line in myNewFile:
+    newline = line.lower()
+    words = re.compile("\w+").findall(newline)
+    for word in words:
+        if len(word)==1 or len(word)==2:
+            continue
+        word = word.lower()
+        if word in compression.keys():
+            newline = newline.replace(word, compression[word])
+    compFile.write(newline)
+
+compFile.close()
+
+print("Compressed file can be found in " + newFilename + ".")
+print("Thank you for using Xyphos.")
