@@ -39,6 +39,7 @@ for line in myFile:
 tupleList = sorted(redundancies.items(), key=operator.itemgetter(1))
 tupleList.reverse()
 tupleList = tupleList[:60]
+
 #ascii int value for 'A'
 z = 65
 for a in range(len(tupleList)):
