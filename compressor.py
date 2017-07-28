@@ -3,6 +3,7 @@ import re
 #stackexchange pointed me to these libraries. should be useful
 
 print("Welcome to Xyphos, a text file compressor made by Kyle Franke.")
+print("You are currently using the compression module. If you want to\ndecompress a file, select decompression.py.")
 
 #user input shenanigans
 x = True
