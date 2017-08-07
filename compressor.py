@@ -82,4 +82,4 @@ for line in myNewFile:
 compFile.close()
 
 print("Compressed file can be found in " + newFilename + ".")
-print("Thank you for using Xyphos.")
+print("Thank you for using Xyphos. Be sure to check out the decompression module!")
