@@ -4,6 +4,7 @@ import re
 
 print("Welcome to Xyphos, a text file compressor made by Kyle Franke.")
 print("You are currently using the compression module. If you want to\ndecompress a file, select decompression.py.")
+print("This compression module is weaker than the main compressor. Use this one for smaller files with fewer unique words.")
 
 #user input shenanigans
 x = True
