@@ -51,7 +51,7 @@ for el in tupleList[:60]:
 z = 65
 for element in wordList:
     compression[element] = chr(z)
-    if z == 122:
+    if z == 90:
         break
     z += 1
 
